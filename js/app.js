@@ -122,7 +122,13 @@ function nextCard() {
     i++;
     if (i === quotes.length) {
         console.log('fin')
-        // exitGame()
+        gsap.to('.curtain', {
+            height: '100%'
+        })
+        gsap.to('.menu', {
+            delay: 0.5,
+            opacity: 1
+        })
     } else {
         removeCard(card)
         createCard(quotes[i])
