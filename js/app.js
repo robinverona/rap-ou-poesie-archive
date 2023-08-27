@@ -9,7 +9,7 @@ let i = 0
 let card // reference to current card
 
 // get quotes from JSON
-fetch("../data/quotes.json")
+fetch('https://robinverona.github.io/rap-ou-poesie/data/quotes.json')
     .then(res => {
         return res.json();
     })
