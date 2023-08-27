@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5vw;
+    // padding: 0 2.5vw;
     z-index: 99;
     // margin-bottom: 30px;
     // background-color: var(--color-bg);
@@ -14,23 +14,27 @@
     //     background-color: transparent;
     // }
     // border: black solid 1px;
-    width: 100%;
+    width: 100vw;
 }
 
-.brand, .who {
+.brand, .rules {
     font-size: 24px;
-}
-
-.brand {
-    font-size: 24px;
-    // font-family: var(--text-headings);
-    // color: var(--color-on-bg);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     letter-spacing: -3px;
     text-decoration: none;
     color: rgba($color: #000000, $alpha: 0.8);
 }
+
+.brand {
+    margin-left: 5vw;
+}
+
+.rules {
+    margin-right: 5vw;
+}
+
+
 
 // button {
 //     background-color: transparent;

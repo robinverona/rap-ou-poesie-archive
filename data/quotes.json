@@ -30,28 +30,72 @@
         "origin": "Ode et Ballades"
     },
     {
-        "quote": "Rap",
-        "answer": "rap",
-        "author": "Rappeur", 
-        "origin": "Album"
+        "quote": "Je suis de ceux qui veulent tout avoir, tout donner, de ceux qui aiment la nuit, le feu et la mer.",
+        "answer": "poetry",
+        "author": "Arthur Rimbaud", 
+        "origin": "L'Horizon chimérique"
     }, 
     {
-        "quote": "Poésie",
+        "quote": "J'ai les pieds sur terre, mais la tête dans les étoiles",
         "answer": "poetry",
-        "author": "Poète", 
-        "origin": "Recueil  "
+        "author": "Jacques Prévert", 
+        "origin": "La Belle Vie"
     },
     {
-        "quote": "Rap",
-        "answer": "rap",
-        "author": "Rappeur", 
-        "origin": "Album"
+        "quote": "J'ai l'impression d'être libre quand je danse.",
+        "answer": "poetry",
+        "author": "Victor Hugo", 
+        "origin": "Soleil"
     }, 
     {
-        "quote": "Poésie",
+        "quote": "J'fais des rêves de grandeur, je veux toucher le ciel",
         "answer": "poetry",
-        "author": "Poète", 
-        "origin": "Recueil  "
+        "author": "Jacques Prévert", 
+        "origin": "La Belle Vie"
+    }, 
+    {
+        "quote": "À notre âge, j'ai déjà les traits tirés, à force de tirer des traits",
+        "answer": "rap",
+        "author": "Oxmo Puccino", 
+        "origin": "Tirer des traits"
+    },
+    {
+        "quote": "Recherche du bonheur, j'm'enfonce dans le vide",
+        "answer": "rap",
+        "author": "PNL", 
+        "origin": "Blanka"
+    }, 
+    {
+        "quote": "Quand l'heure finira par sonner, il fera nuit",
+        "answer": "rap",
+        "author": "SCH", 
+        "origin": "La nuit"
+    },
+    {
+        "quote": "On sourit ou on pleure des larmes d'enterrement",
+        "answer": "rap",
+        "author": "SCH", 
+        "origin": "Himalaya"
+    }, 
+    {
+        "quote": "Je regarde le ciel, les yeux vitreux",
+        "answer": "rap",
+        "author": "SCH", 
+        "origin": "Rêves de gosse"
     }
+    , 
+    {
+        "quote": "La nuit n'a pas su me consoler",
+        "answer": "rap",
+        "author": "SHAY", 
+        "origin": "Pleurer"
+    }, 
+    {
+        "quote": "Le monde est un livre dont chaque pas nous ouvre une page",
+        "answer": "poetry",
+        "author": "Léopold Sédar Senghor", 
+        "origin": "Femme noire"
+    }
+
 ]
 

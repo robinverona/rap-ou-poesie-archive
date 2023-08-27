@@ -3,30 +3,59 @@ const cardDeck = document.querySelector('.card-deck')
 const rapButton = document.getElementById('rapButton')
 const poetryButton = document.getElementById('poetryButton')
 
+let counterHtml
 let loadedQuotes = []
 let quotes = []
 let i = 0
 let card // reference to current card
+let counter = 0
 
 // get quotes from JSON
 fetch('https://robinverona.github.io/rap-ou-poesie/data/quotes.json')
     .then(res => {
-        return res.json();
+        return res.json()
     })
     .then(quotesFromJSON => {
-        loadedQuotes = quotesFromJSON;
+        loadedQuotes = quotesFromJSON
         init();     
     })
     .catch(err => {
-        console.error(err);
+        console.error(err)
 });
 
 
 function init() {
-    quotes = [...loadedQuotes];
-    console.log('available quotes :: ', quotes);
-    console.log(quotes[i]);
-    createCard(quotes[i])
+    quotes = [...loadedQuotes]
+
+    gsap.fromTo('.masthead', {
+        y: -72, 
+        opacity: 0,
+        ease: Power1. easeOut,
+    }, {
+        y: 0, 
+        opacity: 1,
+        ease: Power1. easeOut,
+    })
+
+    
+    setTimeout(() => {
+        counterHtml = document.createElement('div')
+        counterHtml.classList.add('counter')
+        cardDeck.appendChild(counterHtml)
+
+        createCard(quotes[i])
+
+        gsap.fromTo('.controls', {
+            y: 100, 
+            opacity: 0,
+            ease: Power1. easeOut,
+        }, {
+            y: 0, 
+            opacity: 1,
+            ease: Power1. easeOut,
+        })
+
+    }, 1000);
 }
 
 function createCard(question) {
@@ -77,6 +106,8 @@ function createCard(question) {
     }, {
         opacity: 1
     })
+
+    updateCounter()
 }
 
 function flipCard() {
@@ -113,6 +144,12 @@ function checkAnswer(answer) {
     setTimeout(() => {
         nextCard()
     }, 2500);
+}
+
+
+function updateCounter() {
+    counter++
+    counterHtml.innerHTML = `${counter} / ${quotes.length}`
 }
 
 
