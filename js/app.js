@@ -9,7 +9,7 @@ let i = 0
 let card // reference to current card
 
 // get quotes from JSON
-fetch("./../data/quotes.json")
+fetch("/../data/quotes.json")
     .then(res => {
         return res.json();
     })
@@ -30,7 +30,7 @@ function init() {
 }
 
 function createCard(question) {
-    const colors = ['green', 'purple', 'yellow', 'grey', 'blue', 'pink']
+    const colors = ['green', 'purple', 'yellow', 'grey', 'blue', 'pink', 'skyblue', 'brown']
     let randomNumber = Math.floor(Math.random() * colors.length)
 
     // Create card block
@@ -62,10 +62,12 @@ function createCard(question) {
 
     let cardBackAuthor = document.createElement('span')
     cardBackAuthor.innerHTML = question.author
+    cardBackAuthor.classList.add('card-author')
     cardBack.appendChild(cardBackAuthor)
 
     let cardBackOrigin = document.createElement('span')
     cardBackOrigin.innerHTML = question.origin
+    cardBackOrigin.classList.add('card-origin')
     cardBack.appendChild(cardBackOrigin)
 
     cardDeck.appendChild(card)

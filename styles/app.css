@@ -1,0 +1,227 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --color-primary: #7F8076;
+  --color-secondary: whitesmoke;
+  --color-bg: var(--color-primary);
+  --color-on-bg: var(--color-secondary);
+  --color-success: #00d13c;
+  --color-alert: #FE1B00;
+  --color-warning: #ffcd29;
+  /* Fonts */
+  /* https://typescale.com/ */
+  --font-size-small: 0.667rem;
+  --font-size-regular: 1rem;
+  --font-size-large: 1.5rem;
+  --font-size-xl: 2.25rem;
+  --font-size-2xl: 3.375rem;
+  --font-size-3xl: 5.063rem;
+  --font-size-4xl: 7.594rem;
+  --font-family-sans: "sk-modernistregular";
+  --font-family-serif: "serif";
+  --font-family-mono: "disket_monoregular";
+  --text-body: var(--font-family-sans);
+  --text-headings: var(--font-family-mono);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: #eceded;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 0;
+  color: white;
+  width: 100px;
+  height: 50px;
+  /* font-weight: bold; */
+  text-transform: uppercase;
+  font-size: 21px;
+  border-radius: 10px;
+}
+
+.card-deck {
+  /* border: blue solid 1px; */
+}
+
+.card {
+  width: 350px;
+  height: 500px;
+  perspective: 1000px;
+  font-family: Arial, Helvetica, sans-serif;
+  transform-origin: 50% 99%;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* text-align: center; */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+}
+
+.card.translated .card-inner {
+  transform: rotateY(-180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.card-front::before {
+  background: linear-gradient(0% transparent, 50% transparent, 51% rgba(0, 0, 0, 0.8), 100% rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  outline: solid 1px red;
+}
+
+.card-text {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: -3px;
+  margin: 0 2.5vw;
+}
+
+.card-back {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  transform: rotateY(-180deg);
+}
+
+.card-author {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: -3px;
+}
+
+.card-origin {
+  font-size: 31px;
+  font-weight: lighter;
+  letter-spacing: -3px;
+}
+
+.purple {
+  background-color: #7064a5;
+}
+
+.yellow {
+  background-color: #dfd356;
+}
+
+.grey {
+  background-color: #a3a3a3;
+}
+
+.skyblue {
+  background-color: #4c8ec2;
+}
+
+.pink {
+  background-color: #f98f84;
+}
+
+.green {
+  background-color: #439a7c;
+}
+
+.blue {
+  background-color: #547bbd;
+}
+
+.brown {
+  background-color: #b78e68;
+}
+
+/*# sourceMappingURL=app.css.map */
