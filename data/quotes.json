@@ -6,6 +6,42 @@
         "origin": "Album D.U.C"
     }, 
     {
+        "quote": "Je suis faible comme chaque homme",
+        "answer": "rap",
+        "author": "JUL", 
+        "origin": "Winners"
+    }, 
+    {
+        "quote": "Dis-moi qui tu aimes, je te dirai qui tu hais",
+        "answer": "poetry",
+        "author": "Victor Hugo", 
+        "origin": "Philosophie prose"
+    },
+    {
+        "quote": "J’ai pensé à en vouloir à celui qui ne pardonnera pas",
+        "answer": "rap",
+        "author": "JUL", 
+        "origin": "J'ai pensé"
+    }, 
+    {
+        "quote": "Le bonheur de vivre fait la gloire de mourir",
+        "answer": "poetry",
+        "author": "Victor Hugo", 
+        "origin": "Ode et Ballades"
+    },
+    {
+        "quote": "Rap",
+        "answer": "rap",
+        "author": "Rappeur", 
+        "origin": "Album"
+    }, 
+    {
+        "quote": "Poésie",
+        "answer": "poetry",
+        "author": "Poète", 
+        "origin": "Recueil  "
+    },
+    {
         "quote": "Rap",
         "answer": "rap",
         "author": "Rappeur", 
@@ -18,3 +54,4 @@
         "origin": "Recueil  "
     }
 ]
+

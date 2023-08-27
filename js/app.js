@@ -1,86 +1,147 @@
 'use strict'; 
-const cardDeck = document.querySelector('.card-deck');
-const rapButton = document.getElementById('rapButton'); 
-const poetryButton = document.getElementById('poetryButton');
-const currentCard = document.querySelector('.card.current');
+const cardDeck = document.querySelector('.card-deck')
+const rapButton = document.getElementById('rapButton')
+const poetryButton = document.getElementById('poetryButton')
 
+let loadedQuotes = []
 let quotes = []
-let i = 0;
+let i = 0
+let card // reference to current card
 
-rapButton.addEventListener('click', () => {
-    checkAnswer('rap');
-    cardDeck.classList.add('rap');
-})
-
-poetryButton.addEventListener('click', () => {
-    checkAnswer('poetry');
-    setTimeout(() => {
-        cardDeck.classList.add('poetry');
-    }, 1000); //carte redevient grise après animation
-    
-})
-
-document.body.addEventListener(
-    'animationend', animationDone
-);
-
-
-
-
+// get quotes from JSON
 fetch("../data/quotes.json")
     .then(res => {
         return res.json();
     })
-    .then(loadedQuotes => {
-        quotes = loadedQuotes;
-        console.log(quotes);
-        populateCard();
+    .then(quotesFromJSON => {
+        loadedQuotes = quotesFromJSON;
+        init();     
     })
     .catch(err => {
         console.error(err);
 });
 
-function populateCard() {
-    console.log(quotes);
-    currentCard.innerHTML = quotes[i].quote;
+
+function init() {
+    quotes = [...loadedQuotes];
+    console.log('available quotes :: ', quotes);
+    console.log(quotes[i]);
+    createCard(quotes[i])
+}
+
+function createCard(question) {
+    const colors = ['green', 'purple', 'yellow', 'grey', 'blue', 'pink']
+    let randomNumber = Math.floor(Math.random() * colors.length)
+
+    // Create card block
+    card = document.createElement('div')
+    card.classList.add('card')
+
+    // Create inner card wrapper
+    let cardInner = document.createElement('div')
+    cardInner.classList.add('card-inner')
+
+    card.appendChild(cardInner)
+    
+    // Create card front
+    let cardFront = document.createElement('div')
+    cardFront.classList.add('card-front')
+    cardFront.classList.add(colors[randomNumber])
+
+    cardInner.appendChild(cardFront)
+
+    let cardFrontPara = document.createElement('p')
+    cardFrontPara.innerHTML = question.quote
+    cardFrontPara.classList.add('card-text')
+    cardFront.appendChild(cardFrontPara)
+
+    // Create card back
+    let cardBack = document.createElement('div')
+    cardBack.classList.add('card-back')
+    cardInner.appendChild(cardBack)
+
+    let cardBackAuthor = document.createElement('span')
+    cardBackAuthor.innerHTML = question.author
+    cardBack.appendChild(cardBackAuthor)
+
+    let cardBackOrigin = document.createElement('span')
+    cardBackOrigin.innerHTML = question.origin
+    cardBack.appendChild(cardBackOrigin)
+
+    cardDeck.appendChild(card)
+
+    gsap.fromTo('.card', {
+        opacity: 0
+    }, {
+        opacity: 1
+    })
+}
+
+function flipCard() {
+    card.classList.add('translated')
+}
+
+function removeCard(card) {
+    card.remove();
 }
 
 function nextCard() {
     i++;
-    currentCard.innerHTML = quotes[i].quote;
-
+    if (i === quotes.length) {
+        console.log('fin')
+        // exitGame()
+    } else {
+        removeCard(card)
+        createCard(quotes[i])
+    }   
 }
 
 function checkAnswer(answer) {
     if (quotes[i].answer === answer) {
-        currentCard.classList.add('true')
+        gsap.to(".card-back", {
+            backgroundColor: '#00d13c'
+        })
+
     } else {
-        currentCard.classList.add('false')
+        gsap.to(".card-back", {
+            backgroundColor: '#FE1B00'
+        })
     }
-    nextCard();
 
+    setTimeout(() => {
+        nextCard()
+    }, 2500);
 }
 
 
-function animationDone(ev) {
-    // remove the appropriate class
-    // depending on the animation name
-    if (ev.animationName === 'rap') {
-        cardDeck.classList.remove('rap');
-    }
-    if (ev.animationName === 'poetry') {
-        cardDeck.classList.remove('poetry');
-    }
-    if (ev.animationName === 'correct') {
-        currentCard.classList.remove('true');
-    }
-    if (ev.animationName === 'incorrect') {
-        currentCard.classList.remove('false');
-    }
-    // if (ev.animationName === 'reveal') {
-    //     currentCard.classList.remove('current');
-    // }
+rapButton.addEventListener('click', () => {
+    flipCard()
+    checkAnswer('rap')
+    setTimeout(() => {
+        gsap.to(".card", {
+            // delay: 1,
+            transform: 'rotate(-40deg) translateY(-80px)',
+            opacity: 0,
+            ease: Power1. easeOut,
+        })
+    }, 2000);
+    // setTimeout(() => {
+    //     nextCard()
+    // }, 2500);
+})
 
-}
-
-
+poetryButton.addEventListener('click', () => {
+    flipCard()
+    checkAnswer('poetry')
+    setTimeout(() => {
+        gsap.to(".card", {
+            // delay: 1,
+            transform: 'rotate(40deg) translateY(-80px)',
+            opacity: 0,
+            ease: Power1. easeOut,
+        })
+    }, 2000);
+    // setTimeout(() => {
+    //     nextCard()
+    // }, 2500);
+})
