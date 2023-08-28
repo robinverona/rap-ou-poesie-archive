@@ -9,6 +9,7 @@ let quotes = []
 let i = 0
 let card // reference to current card
 let counter = 0
+let randomIndex;
 
 // get quotes from JSON
 fetch('https://robinverona.github.io/rap-ou-poesie/data/quotes.json')
@@ -42,6 +43,7 @@ function init() {
         counterHtml = document.createElement('div')
         counterHtml.classList.add('counter')
         cardDeck.insertBefore(counterHtml, cardDeck.children[0]); 
+        // randomIndex = Math.floor(Math.random() * quotes.length)
         createCard(quotes[i])
 
         gsap.fromTo('.controls', {
@@ -103,9 +105,11 @@ function createCard(question) {
 
 
     gsap.fromTo('.card', {
-        opacity: 0
+        opacity: 0,
+        y: -50
     }, {
-        opacity: 1
+        opacity: 1,
+        y: 0
     })
 
     updateCounter()
@@ -135,6 +139,7 @@ function nextCard() {
             opacity: 1
         })
     } else {
+        // randomIndex = Math.floor(Math.random() * quotes.length)
         removeCard(card)
         createCard(quotes[i])
     }   

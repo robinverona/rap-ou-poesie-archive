@@ -13,8 +13,9 @@
     width: 350px;
     height: 400px;
     perspective: 1000px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--text-headings);
     transform-origin: 50% 99%;
+    margin: 0 5vw;
     @include for-tablet-landscape-up {
         height: 450px;
         cursor: pointer;
@@ -70,9 +71,10 @@
 .card-text {
     font-size: 36px;
     font-weight: bold;
-    letter-spacing: -3px;
     margin: 0 2rem;
     max-width: 90%;
+    letter-spacing: -1px;
+
 }
 
 .card-back {
@@ -90,14 +92,13 @@
 .card-author {
     font-size: 36px;
     font-weight: bold;
-    letter-spacing: -3px;
     margin-bottom: 20px;
 }
 
 .card-origin {
+    font-family: var(--text-body);
     font-size: 31px;
-    font-weight: lighter;
-    letter-spacing: -3px;
+    font-weight: 400;
 }
 
 .purple {

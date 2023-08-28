@@ -4,15 +4,27 @@
     opacity: 0;
 }
 
-button {
+.controls button {
     background-color: transparent;
     border: 0;
     color: rgba($color: #000000, $alpha: 0.8);
     width: 100px;
     height: 100px;
     font-weight: bold;
-    text-transform: lowercase;
+    font-family: var(--text-headings);
+    text-transform: uppercase;
     font-size: 21px;
     border-radius: 50%;
     border: 1.5px solid rgba($color: #000000, $alpha: 0.4);
+    letter-spacing: -1px;
+    margin: 0 15px;
+    @include for-tablet-landscape-up {
+        transition: transform 300ms ease-in-out 0s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+        
+    }
+
 }

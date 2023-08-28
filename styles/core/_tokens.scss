@@ -20,11 +20,11 @@
     --font-size-3xl: 5.063rem; 
     --font-size-4xl: 7.594rem; 
 
-    --font-family-sans: 'sk-modernistregular';
-    --font-family-serif: 'serif'; 
-    --font-family-mono: 'disket_monoregular';
+    --font-family-sans: 'nimbus_sans_lregular';
+    --font-family-headings: 'nimbus_sans_lbold';; 
+    --font-family-mono: 'mono';
 
     --text-body: var(--font-family-sans);
-    --text-headings: var(--font-family-mono);
+    --text-headings: var(--font-family-headings);
 
 }

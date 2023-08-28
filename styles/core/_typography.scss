@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'nimbus_sans_lbold';
+    src: url('./../assets/fonts/Nimbus/NimbusSanL-Bol-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'nimbus_sans_lregular';
+    src: url('./../assets/fonts/Nimbus/NimbusSanL-Reg-webfont.woff') format('woff');
+        font-weight: 400;
+        font-display: swap;
+        font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--text-headings);
+}
+
