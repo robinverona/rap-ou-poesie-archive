@@ -34,7 +34,7 @@
             -webkit-animation: spin 20s linear infinite;
             -moz-animation: spin 20s linear infinite;
             animation: spin 20s linear infinite;
-            transition: transform 500ms ease-in-out 0s;
+            transition: all 500ms ease-in-out 0s;
             @include for-tablet-landscape-up {
                 &:hover {
                     // transform: scale(1.3);
@@ -46,9 +46,7 @@
         @include for-tablet-landscape-up {
             &:hover {
                 transform: scale(1.2);
-                -webkit-animation: spin 10s linear infinite;
-                -moz-animation: spin 10s linear infinite;
-                animation: spin 10s linear infinite;
+                animation-duration: 10s;
             }
         
         }

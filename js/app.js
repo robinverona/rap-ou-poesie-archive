@@ -160,7 +160,7 @@ function checkAnswer(answer) {
 
     setTimeout(() => {
         nextCard()
-    }, 2500);
+    }, 1500);
 }
 
 
@@ -181,7 +181,7 @@ rapButton.addEventListener('click', () => {
             opacity: 0,
             ease: Power1. easeOut,
         })
-    }, 2000);
+    }, 1000);
     // setTimeout(() => {
     //     nextCard()
     // }, 2500);
@@ -198,7 +198,7 @@ poetryButton.addEventListener('click', () => {
             opacity: 0,
             ease: Power1. easeOut,
         })
-    }, 2000);
+    }, 1000);
     // setTimeout(() => {
     //     nextCard()
     // }, 2500);
