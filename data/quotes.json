@@ -30,7 +30,7 @@
         "origin": "Ode et Ballades"
     },
     {
-        "quote": "Je suis de ceux qui veulent tout avoir, tout donner, de ceux qui aiment la nuit, le feu et la mer.",
+        "quote": "Je suis de ceux qui veulent tout avoir, tout donner",
         "answer": "poetry",
         "author": "Arthur Rimbaud", 
         "origin": "L'Horizon chimérique"
@@ -60,7 +60,7 @@
         "origin": "Tirer des traits"
     },
     {
-        "quote": "Recherche du bonheur, j'm'enfonce dans le vide",
+        "quote": "Recherche du bonheur, je m'enfonce dans le vide",
         "answer": "rap",
         "author": "PNL", 
         "origin": "Blanka"
@@ -95,6 +95,42 @@
         "answer": "poetry",
         "author": "Léopold Sédar Senghor", 
         "origin": "Femme noire"
+    }, 
+    {
+        "quote": "La lumière, le concret un concept de clown",
+        "answer": "rap",
+        "author": "IAM", 
+        "origin": "Ombre est Lumière"
+    }, 
+    {
+        "quote": "Je m’effacerais comme une mer sans eau",
+        "answer": "rap",
+        "author": "Kery James", 
+        "origin": "Je m'écris"
+    }, 
+    {
+        "quote": "Compose avec la lumière en tant qu'homme de l'ombre",
+        "answer": "rap",
+        "author": "Oxmo Puccino", 
+        "origin": "365 jours"
+    }, 
+    {
+        "quote": "Fais-moi des serments que tu rompras demain",
+        "answer": "poetry",
+        "author": "Paul Verlaine", 
+        "origin": "Lassitude"
+    }, 
+    {
+        "quote": "La reine est déchue, une nouvelle prend le sceptre",
+        "answer": "rap",
+        "author": "IAM", 
+        "origin": "Ombre est Lumière"
+    }, 
+    {
+        "quote": "Faire conﬁance aux hommes a tué mon espérance",
+        "answer": "rap",
+        "author": "Youssoupha", 
+        "origin": "Polaroïd Experience"
     }
 
 ]
