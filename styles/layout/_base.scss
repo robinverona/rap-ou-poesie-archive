@@ -5,7 +5,23 @@ html, body {
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    background-color: #eceded;
+    // background-color: #eceded;
+
+}
+
+.wallpaper {
+  display: none;
+  @include for-tablet-landscape-up {
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: fixed;
+    background-image: url('../../assets/rapoesie.png');
+    background-size: cover;
+    filter: blur(5px) grayscale(100%);
+    
+}
 }
 
 #content {
@@ -18,6 +34,7 @@ html, body {
   // justify-content: center;
   // align-items: center;
   // flex-direction: column;
+  
 }
 
 .counter {
