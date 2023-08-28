@@ -120,7 +120,7 @@ html, body {
     height: 100%;
     z-index: -1;
     position: fixed;
-    background-image: url("../../assets/rapoesie.png");
+    background-image: url("./../../assets/rapoesie.png");
     background-size: cover;
     filter: blur(5px) grayscale(100%);
   }
