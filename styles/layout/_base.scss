@@ -22,7 +22,7 @@ html, body {
 
 .counter {
   // border: red solid 1px;
-  font-family: var(--text-body);
+  font-family: 'open_sanscondensed_light';
   color: rgba($color: #000000, $alpha: 0.5);
   font-size: 24px;
   font-weight: 200;
@@ -51,8 +51,10 @@ html, body {
 
 .menu a {
   color: white;
-  font-size: 24px;
   font-weight: bold;
-  font-family: var(--text-body);
+  font-family: var(--text-headings);
+  font-size: 17px;
+  line-height: 20px;
   text-decoration: none;
+  text-transform: uppercase;
 }

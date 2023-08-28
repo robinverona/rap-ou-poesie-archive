@@ -89,6 +89,13 @@ table {
   font-display: swap;
   font-style: normal;
 }
+@font-face {
+  font-family: "open_sanscondensed_light";
+  src: url("./../assets/fonts/OpenSans/OpenSans-CondLight-webfont.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--text-headings);
 }
@@ -113,7 +120,7 @@ html, body {
 }
 
 .counter {
-  font-family: var(--text-body);
+  font-family: "open_sanscondensed_light";
   color: rgba(0, 0, 0, 0.5);
   font-size: 24px;
   font-weight: 200;
@@ -140,10 +147,12 @@ html, body {
 
 .menu a {
   color: white;
-  font-size: 24px;
   font-weight: bold;
-  font-family: var(--text-body);
+  font-family: var(--text-headings);
+  font-size: 17px;
+  line-height: 20px;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .masthead {
@@ -159,7 +168,8 @@ html, body {
 }
 
 .brand, .rules {
-  font-size: 24px;
+  font-size: 17px;
+  line-height: 20px;
   font-family: var(--text-headings);
   font-weight: bold;
   text-decoration: none;
@@ -192,7 +202,8 @@ html, body {
   font-weight: bold;
   font-family: var(--text-headings);
   text-transform: uppercase;
-  font-size: 21px;
+  font-size: 17px;
+  line-height: 20px;
   border-radius: 50%;
   border: 1.5px solid rgba(0, 0, 0, 0.4);
   letter-spacing: -1px;
@@ -303,7 +314,7 @@ html, body {
 
 .card-origin {
   font-family: var(--text-body);
-  font-size: 31px;
+  font-size: 28px;
   font-weight: 400;
 }
 

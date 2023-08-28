@@ -18,13 +18,18 @@
 }
 
 .brand, .rules {
-    font-size: 24px;
+    // font-size: 24px;
+    font-size: 17px;
+    line-height: 20px;
     font-family: var(--text-headings);
     font-weight: bold;
     text-decoration: none;
     color: rgba($color: #000000, $alpha: 0.8);
     text-transform: uppercase;
     letter-spacing: -1px;
+    // @include for-tablet-landscape-up {
+    //     background-color: transparent;
+    // }
 }
 
 .brand {
