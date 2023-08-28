@@ -3,7 +3,7 @@
         "quote": "Que Dieu me punisse d'être comme les autres",
         "answer": "rap",
         "author": "Booba", 
-        "origin": "D.U.C"
+        "origin": "Tony Sosa"
     }, 
     {
         "quote": "Je suis faible comme chaque homme",
@@ -42,13 +42,13 @@
         "origin": "La Belle Vie"
     },
     {
-        "quote": "J'ai l'impression d'être libre quand je danse.",
+        "quote": "J'ai l'impression d'être libre quand je danse",
         "answer": "poetry",
         "author": "Victor Hugo", 
         "origin": "Soleil"
     }, 
     {
-        "quote": "J'fais des rêves de grandeur, je veux toucher le ciel",
+        "quote": "Je fais des rêves de grandeur, je veux toucher le ciel",
         "answer": "poetry",
         "author": "Jacques Prévert", 
         "origin": "La Belle Vie"
@@ -97,7 +97,7 @@
         "origin": "Femme noire"
     }, 
     {
-        "quote": "La lumière, le concret un concept de clown",
+        "quote": "La lumière, le concret, un concept de clown",
         "answer": "rap",
         "author": "IAM", 
         "origin": "Ombre est Lumière"
@@ -131,7 +131,121 @@
         "answer": "rap",
         "author": "Youssoupha", 
         "origin": "Polaroïd Experience"
+    },
+    {
+        "quote": "Dans l'attente que la genèse d'un rayon se manifeste",
+        "answer": "rap",
+        "author": "IAM", 
+        "origin": "Ombre est Lumière"
+    }, 
+    {
+        "quote": "Je mourrai d'un cancer de la colonne vertébrale",
+        "answer": "poetry",
+        "author": "Boris Vian", 
+        "origin": "Je Mourrai D'un Cancer de la Colonne Vertébrale"
+    },
+    {
+        "quote": "J'avais le feu dans les yeux, c'est trop tard pour prier",
+        "answer": "rap",
+        "author": "Sofiane", 
+        "origin": "Polaroïd Experience"
+    },
+    {
+        "quote": "L'univers se renverse comme un vase",
+        "answer": "rap",
+        "author": "IAM", 
+        "origin": "Ombre est Lumière"
+    },
+    {
+        "quote": " Aussi sec que la lave, aussi noir que le ciel",
+        "answer": "poetry",
+        "author": "Raymond Queneau", 
+        "origin": "Je crains pas ça tellment"
+    },
+    {
+        "quote": " Ils ont pris une centaine de nos âmes humaines ",
+        "answer": "rap",
+        "author": "Médine", 
+        "origin": "Allumettes"
+    },
+    {
+        "quote": " Face à ces idées qu'on subit, je sais, la cécité te séduit",
+        "answer": "rap",
+        "author": "Nekfeu", 
+        "origin": "Avant tu riais"
+    },
+    {
+        "quote": " Ta radicalité n'est qu'un tigre de papier",
+        "answer": "rap",
+        "author": "Médine", 
+        "origin": "Allumettes"
+    },
+    {
+        "quote": " Poète aigri, la vie bout et la ville brûle",
+        "answer": "poetry",
+        "author": "Antonin Artaud", 
+        "origin": "Poète noir"
+    },
+    {
+        "quote": "Les yeux ragent, les langues tournent, le ciel afflue dans les narines",
+        "answer": "poetry",
+        "author": "Antonin Artaud", 
+        "origin": "Poète noir"
+    },
+    {
+        "quote": "Il faut nous laver de cette crasse héréditaire",
+        "answer": "poetry",
+        "author": "Antonin Artaud", 
+        "origin": "Amour"
+    },
+    {
+        "quote": "les minutes me tuent",
+        "answer": "rap",
+        "author": "Lunatic", 
+        "origin": "Le silence n'est pas un oubli"
+    },
+    {
+        "quote": "Des heures endormis sur des feuilles blanches     ",
+        "answer": "rap",
+        "author": "Lunatic", 
+        "origin": "Le silence n'est pas un oubli"
+    },
+    {
+        "quote": "C'est plus pratique que le cimetière",
+        "answer": "poetry",
+        "author": "Jacques Prévert", 
+        "origin": "Le temps des noyaux"
+    },
+    {
+        "quote": "Je voudrais pas crever, avant d'avoir goûté la saveur de la mort",
+        "answer": "poetry",
+        "author": "Boris Vian", 
+        "origin": "Je voudrais pas crever"
+    },
+    {
+        "quote": "Je veux une vie en forme de sable dans des mains",
+        "answer": "poetry",
+        "author": "Boris Vian", 
+        "origin": "Je veux une vie en forme d'arête"
+    },
+    {
+        "quote": "Et je l'ai, mais ça ne me suffit pas encore, je ne suis jamais content",
+        "answer": "poetry",
+        "author": "Boris Vian", 
+        "origin": "Je veux une vie en forme d'arête"
+    },
+    {
+        "quote": "La rosée du matin brillait encore sur les lauriers du voisin",
+        "answer": "rap",
+        "author": "SCH", 
+        "origin": "La nuit"
+    },
+    {
+        "quote": "J'aspire le temps, les yeux plissés",
+        "answer": "rap",
+        "author": "Lunatic", 
+        "origin": "Le silence n'est pas un oubli"
     }
-
 ]
+
 
