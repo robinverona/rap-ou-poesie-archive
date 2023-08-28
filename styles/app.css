@@ -220,19 +220,44 @@ html, body {
   font-size: 17px;
   line-height: 20px;
   border-radius: 50%;
-  border: 1.5px solid rgba(0, 0, 0, 0.4);
   letter-spacing: -1px;
   margin: 0 15px;
+  transition: transform 300ms ease-in-out 0s;
+  position: relative;
 }
-@media (min-width: 768px) {
-  .controls button {
-    transition: transform 300ms ease-in-out 0s;
-  }
-  .controls button:hover {
-    transform: scale(1.2);
-  }
+.controls button img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  -webkit-animation: spin 20s linear infinite;
+  -moz-animation: spin 20s linear infinite;
+  animation: spin 20s linear infinite;
+  transition: transform 300ms ease-in-out 0s;
+}
+.controls button:hover {
+  transform: scale(1.2);
+  -webkit-animation: spin 10s linear infinite;
+  -moz-animation: spin 10s linear infinite;
+  animation: spin 10s linear infinite;
 }
 
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .card-deck {
   width: 100%;
   height: 100%;
