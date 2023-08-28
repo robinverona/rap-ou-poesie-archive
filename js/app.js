@@ -2,6 +2,7 @@
 const cardDeck = document.querySelector('.card-deck')
 const rapButton = document.getElementById('rapButton')
 const poetryButton = document.getElementById('poetryButton')
+const rulesButton = document.getElementById('rulesButton')
 
 let counterHtml
 let loadedQuotes = []
@@ -201,4 +202,14 @@ poetryButton.addEventListener('click', () => {
     // setTimeout(() => {
     //     nextCard()
     // }, 2500);
+})
+
+
+rulesButton.addEventListener('click', () => {
+    const rulesCurtain = document.querySelector('.rules-curtain')
+    rulesCurtain.classList.toggle('open')
+    gsap.to('.rules-content', {
+        opacity: 1,
+        delay: 1
+    })
 })

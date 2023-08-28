@@ -19,6 +19,7 @@
     // border: 1.5px solid rgba($color: #000000, $alpha: 0.4);
     letter-spacing: -1px;
     margin: 0 15px;
+    cursor: pointer;
 
     // @include for-tablet-landscape-up {
         transition: transform 300ms ease-in-out 0s;
@@ -33,18 +34,24 @@
             -webkit-animation: spin 20s linear infinite;
             -moz-animation: spin 20s linear infinite;
             animation: spin 20s linear infinite;
-            transition: transform 300ms ease-in-out 0s;
-
+            transition: transform 500ms ease-in-out 0s;
+            @include for-tablet-landscape-up {
+                &:hover {
+                    // transform: scale(1.3);
+                }
+            
+            }
         }
 
-        &:hover {
-            transform: scale(1.2);
-            -webkit-animation: spin 10s linear infinite;
-            -moz-animation: spin 10s linear infinite;
-            animation: spin 10s linear infinite;
-        }
+        @include for-tablet-landscape-up {
+            &:hover {
+                transform: scale(1.2);
+                -webkit-animation: spin 10s linear infinite;
+                -moz-animation: spin 10s linear infinite;
+                animation: spin 10s linear infinite;
+            }
         
-    // }
+        }
 
 }
 
