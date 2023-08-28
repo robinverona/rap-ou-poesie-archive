@@ -41,8 +41,7 @@ function init() {
     setTimeout(() => {
         counterHtml = document.createElement('div')
         counterHtml.classList.add('counter')
-        cardDeck.appendChild(counterHtml)
-
+        cardDeck.insertBefore(counterHtml, cardDeck.children[0]); 
         createCard(quotes[i])
 
         gsap.fromTo('.controls', {
@@ -99,7 +98,9 @@ function createCard(question) {
     cardBackOrigin.classList.add('card-origin')
     cardBack.appendChild(cardBackOrigin)
 
-    cardDeck.appendChild(card)
+    // cardDeck.appendChild(card)
+    cardDeck.insertBefore(card, cardDeck.children[1]); 
+
 
     gsap.fromTo('.card', {
         opacity: 0
@@ -108,6 +109,10 @@ function createCard(question) {
     })
 
     updateCounter()
+
+    rapButton.disabled = false;
+    poetryButton.disabled = false;
+
 }
 
 function flipCard() {
@@ -161,6 +166,7 @@ function updateCounter() {
 
 rapButton.addEventListener('click', () => {
     flipCard()
+    rapButton.disabled = true;
     checkAnswer('rap')
     setTimeout(() => {
         gsap.to(".card", {
@@ -177,6 +183,7 @@ rapButton.addEventListener('click', () => {
 
 poetryButton.addEventListener('click', () => {
     flipCard()
+    poetryButton.disabled = true;
     checkAnswer('poetry')
     setTimeout(() => {
         gsap.to(".card", {
