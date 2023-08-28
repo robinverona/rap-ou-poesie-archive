@@ -11,10 +11,14 @@
 .card {
     // background-color: transparent;
     width: 350px;
-    height: 450px;
+    height: 400px;
     perspective: 1000px;
     font-family: Arial, Helvetica, sans-serif;
     transform-origin: 50% 99%;
+    @include for-tablet-landscape-up {
+        height: 450px;
+        cursor: pointer;
+    }
 
 }
 
@@ -80,12 +84,14 @@
 .card-author, .card-origin {
     max-width: 90%;
     margin: 0 2rem;
+    text-align: center;
 }
 
 .card-author {
     font-size: 36px;
     font-weight: bold;
     letter-spacing: -3px;
+    margin-bottom: 20px;
 }
 
 .card-origin {
