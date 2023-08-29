@@ -122,7 +122,8 @@ html, body {
     position: fixed;
     background-image: url("./../../assets/rapoesie.png");
     background-size: cover;
-    filter: blur(5px) grayscale(100%);
+    background-position: center;
+    filter: blur(8px) grayscale(100%);
   }
 }
 
@@ -132,6 +133,7 @@ html, body {
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .counter {
@@ -139,7 +141,13 @@ html, body {
   color: rgba(0, 0, 0, 0.5);
   font-size: 24px;
   font-weight: 200;
-  margin-bottom: 30px;
+  margin-top: 90px;
+}
+@media (min-width: 768px) {
+  .counter {
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
 }
 
 .rules-curtain {
@@ -206,6 +214,11 @@ html, body {
   align-items: center;
   z-index: 99;
   width: 100vw;
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
 }
 
 .brand, .rules {
@@ -225,7 +238,6 @@ html, body {
 
 .rules {
   margin-right: 5vw;
-  color: rgba(0, 0, 0, 0.4);
   background-color: transparent;
   border: 0;
   cursor: pointer;
@@ -264,7 +276,7 @@ html, body {
   -webkit-animation: spin 20s linear infinite;
   -moz-animation: spin 20s linear infinite;
   animation: spin 20s linear infinite;
-  transition: all 500ms ease-in-out 0s;
+  transition: all 600ms ease;
 }
 @media (min-width: 768px) {
   .controls button:hover {
@@ -292,12 +304,21 @@ html, body {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  background: rgb(255, 255, 255);
+  background: -moz-radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .card {
+  background-color: transparent;
   width: 90vw;
   height: 400px;
   perspective: 1000px;
@@ -306,21 +327,19 @@ html, body {
 }
 @media (min-width: 768px) {
   .card {
-    height: 450px;
-    width: 350px;
+    height: 600px;
+    width: 400px;
     cursor: pointer;
   }
 }
 
 .card-inner {
+  background-color: transparent;
   position: relative;
   width: 100%;
   height: 100%;
-  /* text-align: center; */
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 25px;
 }
 
 .card.translated .card-inner {
@@ -333,7 +352,6 @@ html, body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -343,17 +361,12 @@ html, body {
 .card-front {
   background-color: white;
   color: rgba(0, 0, 0, 0.8);
-}
-
-.card-front::before {
-  background: linear-gradient(0% transparent, 50% transparent, 51% rgba(0, 0, 0, 0.8), 100% rgba(0, 0, 0, 0));
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  outline: solid 1px red;
+  background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
 }
 
 .card-text {
@@ -368,6 +381,8 @@ html, body {
   background-color: white;
   color: rgba(0, 0, 0, 0.8);
   transform: rotateY(-180deg);
+  background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .card-author, .card-origin {
@@ -418,6 +433,23 @@ html, body {
 
 .brown {
   background-color: #b78e68;
+}
+
+.orange {
+  background-color: #FEA347;
+}
+
+.card-front:hover {
+  transition-duration: 150ms;
+}
+
+.card-front .glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.1333333333), rgba(0, 0, 0, 0.0588235294));
 }
 
 /*# sourceMappingURL=app.css.map */

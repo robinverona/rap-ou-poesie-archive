@@ -19,6 +19,11 @@
     //     // mix-blend-mode: difference;
     //     background-color: rgba($color: #fff, $alpha: 0.1);
     // }
+    background: rgb(255,255,255);
+background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
 }
 
 .brand, .rules {
@@ -41,7 +46,7 @@
 
 .rules {
     margin-right: 5vw;
-    color: rgba($color: #000000, $alpha: 0.4);
+    // color: rgba($color: #000000, $alpha: 0.4);
     background-color: transparent;
     border: 0;
     cursor: pointer;
