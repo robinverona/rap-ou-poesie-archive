@@ -169,7 +169,7 @@ function nextCard() {
 function checkAnswer(answer) {
     if (quotes[i].answer === answer) {
         gsap.to(".card-back", {
-            backgroundColor: '#00d13c'
+            backgroundColor: '#00d13c',
         })
 
     } else {
@@ -286,17 +286,7 @@ rapButton.addEventListener('click', () => {
     // }, 2500);
 })
 
-rapButton.addEventListener('mouseenter', () => {
-    let circle = document.querySelector('#rapButton img')
-    console.log(circle)
-    circle.style.animationDuration = '5s'
-})
 
-rapButton.addEventListener('mouseleave', () => {
-    let circle = document.querySelector('#rapButton img')
-    console.log(circle)
-    circle.style.animationDuration = '20s'
-})
 
 
 
@@ -317,24 +307,68 @@ poetryButton.addEventListener('click', () => {
     // }, 2500);
 })
 
-poetryButton.addEventListener('mouseenter', () => {
-    let circle = document.querySelector('#poetryButton img')
-    console.log(circle)
-    circle.style.animationDuration = '10s'
-})
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+    
+if (!isMobile()) {
+    poetryButton.addEventListener('mouseenter', () => {
+        let circle = document.querySelector('#poetryButton img')
+        console.log(circle)
+        circle.style.animationDuration = '10s'
+    })
+    
+    poetryButton.addEventListener('mouseleave', () => {
+        let circle = document.querySelector('#poetryButton img')
+        console.log(circle)
+        circle.style.animationDuration = '20s'
+    })
+    rapButton.addEventListener('mouseenter', () => {
+        let circle = document.querySelector('#rapButton img')
+        console.log(circle)
+        circle.style.animationDuration = '5s'
+    })
+    
+    rapButton.addEventListener('mouseleave', () => {
+        let circle = document.querySelector('#rapButton img')
+        console.log(circle)
+        circle.style.animationDuration = '20s'
+    })    
+}
 
-poetryButton.addEventListener('mouseleave', () => {
-    let circle = document.querySelector('#poetryButton img')
-    console.log(circle)
-    circle.style.animationDuration = '20s'
-})
 
 
 rulesButton.addEventListener('click', () => {
+    rulesButton.classList.add('closeButton')
+    const closeButton = document.querySelector('.closeButton')
     const rulesCurtain = document.querySelector('.rules-curtain')
+    rulesButton.innerHTML = 'fermer'
+    
     rulesCurtain.classList.toggle('open')
+
     gsap.to('.rules-content', {
         opacity: 1,
         delay: 1
+    })
+
+    closeButton.addEventListener('click', () => {
+        rulesCurtain.classList.remove('open')
+        rulesButton.innerHTML = 'infos'
+        rulesButton.classList.remove('closeButton')
+        gsap.to('.rules-content', {
+            opacity: 0,
+            delay: 0.5
+        })
+    })
+
+    rulesCurtain.addEventListener('click', () => {
+        rulesCurtain.classList.remove('open')
+        rulesButton.innerHTML = 'infos'
+
+        gsap.to('.rules-content', {
+            opacity: 0,
+            delay: 0.5
+        })
+
     })
 })

@@ -19,11 +19,7 @@
     //     // mix-blend-mode: difference;
     //     background-color: rgba($color: #fff, $alpha: 0.1);
     // }
-    background: rgb(255,255,255);
-background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+
 }
 
 .brand, .rules {

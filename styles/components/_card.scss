@@ -26,7 +26,8 @@
     @include for-tablet-landscape-up {
         height: 600px;
         width: 400px;
-        cursor: pointer;
+        cursor: cursor;
+        // border: red solid 1px;
     }
 
 }
@@ -43,6 +44,10 @@
 .card.translated .card-inner {
     transform: rotateY(-180deg);
   }
+
+.card-front, .card-back, .card-front .glow {
+    border-radius: 15px;
+}
   
 .card-front, .card-back {
     position: absolute;
@@ -50,7 +55,6 @@
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    // border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,6 +168,5 @@
     height: 100%;
     left: 0;
     top: 0;
-    
     background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
   }
