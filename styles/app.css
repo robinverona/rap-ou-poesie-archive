@@ -176,6 +176,26 @@ html, body {
   color: rgba(0, 0, 0, 0.8);
   margin: 0 5vw;
   font-family: var(--text-body);
+  width: 90%;
+  max-width: 1000px;
+  margin: 5rem auto 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -1px;
+}
+.rules-content h1 {
+  font-size: 4.375rem;
+  text-align: center;
+  margin: 3rem 1rem;
+  text-transform: uppercase;
+}
+.rules-content p {
+  width: 75%;
+  font-size: 1.2rem;
+  line-height: 140%;
+  margin: 1rem auto;
 }
 
 .curtain {

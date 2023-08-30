@@ -42,10 +42,6 @@ function init() {
 
     
     setTimeout(() => {
-        // counterHtml = document.createElement('div')
-        // counterHtml.classList.add('counter')
-        // cardDeck.insertBefore(counterHtml, cardDeck.children[0]); 
-        // randomIndex = Math.floor(Math.random() * quotes.length)
         createCounter()
         createCard(quotes[i])
 
@@ -275,15 +271,11 @@ rapButton.addEventListener('click', () => {
     checkAnswer('rap')
     setTimeout(() => {
         gsap.to(".card", {
-            // delay: 1,
             transform: 'scale(1.3) rotate(-40deg) translateY(-80px)',
             opacity: 0,
             ease: Power1. easeOut,
         })
     }, 1000);
-    // setTimeout(() => {
-    //     nextCard()
-    // }, 2500);
 })
 
 
@@ -296,15 +288,11 @@ poetryButton.addEventListener('click', () => {
     checkAnswer('poetry')
     setTimeout(() => {
         gsap.to(".card", {
-            // delay: 1,
             transform: 'scale(1.3) rotate(40deg) translateY(-80px)',
             opacity: 0,
             ease: Power1. easeOut,
         })
     }, 1000);
-    // setTimeout(() => {
-    //     nextCard()
-    // }, 2500);
 })
 
 function isMobile() {
@@ -315,7 +303,7 @@ if (!isMobile()) {
     poetryButton.addEventListener('mouseenter', () => {
         let circle = document.querySelector('#poetryButton img')
         console.log(circle)
-        circle.style.animationDuration = '10s'
+        circle.style.animationDuration = '5s'
     })
     
     poetryButton.addEventListener('mouseleave', () => {
@@ -340,30 +328,35 @@ if (!isMobile()) {
 
 rulesButton.addEventListener('click', () => {
     rulesButton.classList.add('closeButton')
-    const closeButton = document.querySelector('.closeButton')
+    // const closeButton = document.querySelector('.closeButton')
     const rulesCurtain = document.querySelector('.rules-curtain')
-    rulesButton.innerHTML = 'fermer'
-    
     rulesCurtain.classList.toggle('open')
 
-    gsap.to('.rules-content', {
-        opacity: 1,
-        delay: 1
-    })
-
-    closeButton.addEventListener('click', () => {
-        rulesCurtain.classList.remove('open')
+    if (!rulesCurtain.classList.contains('open')) {
         rulesButton.innerHTML = 'infos'
-        rulesButton.classList.remove('closeButton')
         gsap.to('.rules-content', {
             opacity: 0,
+        })
+    } 
+
+    if (rulesCurtain.classList.contains('open')) {
+        rulesButton.innerHTML = 'fermer'
+        gsap.to('.rules-content', {
+            opacity: 1,
             delay: 0.5
         })
-    })
+    } 
+
 
     rulesCurtain.addEventListener('click', () => {
         rulesCurtain.classList.remove('open')
-        rulesButton.innerHTML = 'infos'
+        if (!rulesCurtain.classList.contains('open')) {
+            rulesButton.innerHTML = 'infos'
+        } 
+    
+        if (rulesCurtain.classList.contains('open')) {
+            rulesButton.innerHTML = 'fermer'
+        } 
 
         gsap.to('.rules-content', {
             opacity: 0,
