@@ -148,7 +148,7 @@
         "quote": "J'avais le feu dans les yeux, c'est trop tard pour prier",
         "answer": "rap",
         "author": "Sofiane", 
-        "origin": "Polaroïd Experience"
+        "origin": "Dis leur"
     },
     {
         "quote": "L'univers se renverse comme un vase",
@@ -245,6 +245,60 @@
         "answer": "rap",
         "author": "Lunatic", 
         "origin": "Le silence n'est pas un oubli"
+    },
+    {
+        "quote": "Le grand œil cligne dépasse la ligne",
+        "answer": "rap",
+        "author": "Sofiane", 
+        "origin": "Windsor"
+    },
+    {
+        "quote": "Plus rien à fêter, feu d'espoir eteint",
+        "answer": "rap",
+        "author": "Sofiane", 
+        "origin": "Madame Courage"
+    },
+    {
+        "quote": "Un arbre sans racines, nul ne le coupe",
+        "answer": "rap",
+        "author": "Oxmo Puccino", 
+        "origin": "L'arme de paix"
+    },
+    {
+        "quote": "Le passé s'efface comme un dessin d'enfant",
+        "answer": "rap",
+        "author": "MC Solaar", 
+        "origin": "Solaar pleure"
+    },
+    {
+        "quote": "Parler de l'amour, le chanter, être son éclat",
+        "answer": "rap",
+        "author": "Georgio", 
+        "origin": "Héra"
+    },
+    {
+        "quote": "Moi je suis en chantier, je suis en construction",
+        "answer": "poetry",
+        "author": "Charles Pennequin", 
+        "origin": "Manifeste"
+    },
+    {
+        "quote": "Pour ne plus avoir peur des mots, pour leur échapper",
+        "answer": "poetry",
+        "author": "Charles Pennequin", 
+        "origin": "Manifeste"
+    },
+    {
+        "quote": "Je veux me sentir vivre",
+        "answer": "rap",
+        "author": "SCH", 
+        "origin": "Rêves de gosse"
+    },
+    {
+        "quote": "Sous le ciel étanche, la solitude immense",
+        "answer": "rap",
+        "author": "SHAY", 
+        "origin": "Désillusions"
     }
 ]
 
