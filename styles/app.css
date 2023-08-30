@@ -120,7 +120,7 @@ html, body {
     height: 100%;
     z-index: -1;
     position: fixed;
-    background-image: url("./../../assets/rapoesie.png");
+    background-image: url("https://robinverona.github.io/rap-ou-poesie/assets/rapoesie.png");
     background-size: cover;
     background-position: center;
     filter: blur(8px) grayscale(100%);
