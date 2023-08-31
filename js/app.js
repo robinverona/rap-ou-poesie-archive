@@ -13,6 +13,12 @@ let counter = 0
 let randomIndex
 let bounds
 
+gsap.from('.curtain', {
+    height: '100%',
+    delay: 1
+    // duration: '10ms'
+})
+
 // get all quotes from JSON
 fetch('https://robinverona.github.io/rap-ou-poesie/data/quotes.json')
     .then(res => {
