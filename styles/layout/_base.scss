@@ -70,6 +70,10 @@ html, body {
 
   &.open {
     height: 100%;
+
+    & .rules-content {
+      opacity: 1;
+    }
   }
 }
 
@@ -102,6 +106,7 @@ html, body {
     margin: 1rem auto;
   }
 }
+
 
 .curtain {
   background-color: #000000;

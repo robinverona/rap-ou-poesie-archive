@@ -170,6 +170,9 @@ html, body {
 .rules-curtain.open {
   height: 100%;
 }
+.rules-curtain.open .rules-content {
+  opacity: 1;
+}
 
 .rules-content {
   opacity: 0;

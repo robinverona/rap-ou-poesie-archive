@@ -3,21 +3,20 @@ const cardDeck = document.querySelector('.card-deck')
 const rapButton = document.getElementById('rapButton')
 const poetryButton = document.getElementById('poetryButton')
 const rulesButton = document.getElementById('rulesButton')
+const rulesCurtain = document.querySelector('.rules-curtain')
 let cardFrontTarget = document.querySelector('.card-front')
+const startButton = document.getElementById('startButton')
+
 let counterHtml
 let loadedQuotes = []
 let quotes = []
+let availableQuotes = []
 let i = 0
 let card // reference to current card
 let counter = 0
 let randomIndex
 let bounds
 
-gsap.from('.curtain', {
-    height: '100%',
-    delay: 1
-    // duration: '10ms'
-})
 
 // get all quotes from JSON
 fetch('https://robinverona.github.io/rap-ou-poesie/data/quotes.json')
@@ -64,6 +63,7 @@ function init() {
     }, 1000);
 }
 
+
 function createCard(question) {
     const colors = ['green', 'orange', 'purple', 'yellow', 'grey', 'blue', 'pink', 'skyblue', 'brown']
     let randomNumber = Math.floor(Math.random() * colors.length)
@@ -85,7 +85,6 @@ function createCard(question) {
     
     cardInner.appendChild(cardFront)
     cardFrontTarget = cardFront
-    console.log(cardFrontTarget)
 
     let cardFrontPara = document.createElement('p')
     cardFrontPara.innerHTML = question.quote
@@ -268,8 +267,6 @@ function rotateToMouse(e) {
     `;
   }
   
-  console.log(cardFrontTarget);
-
 
 rapButton.addEventListener('click', () => {
     flipCard()
@@ -308,24 +305,20 @@ function isMobile() {
 if (!isMobile()) {
     poetryButton.addEventListener('mouseenter', () => {
         let circle = document.querySelector('#poetryButton img')
-        console.log(circle)
         circle.style.animationDuration = '5s'
     })
     
     poetryButton.addEventListener('mouseleave', () => {
         let circle = document.querySelector('#poetryButton img')
-        console.log(circle)
         circle.style.animationDuration = '20s'
     })
     rapButton.addEventListener('mouseenter', () => {
         let circle = document.querySelector('#rapButton img')
-        console.log(circle)
         circle.style.animationDuration = '5s'
     })
     
     rapButton.addEventListener('mouseleave', () => {
         let circle = document.querySelector('#rapButton img')
-        console.log(circle)
         circle.style.animationDuration = '20s'
     })    
 }
@@ -335,7 +328,6 @@ if (!isMobile()) {
 rulesButton.addEventListener('click', () => {
     rulesButton.classList.add('closeButton')
     // const closeButton = document.querySelector('.closeButton')
-    const rulesCurtain = document.querySelector('.rules-curtain')
     rulesCurtain.classList.toggle('open')
 
     if (!rulesCurtain.classList.contains('open')) {
@@ -370,4 +362,13 @@ rulesButton.addEventListener('click', () => {
         })
 
     })
+})
+
+startButton.addEventListener('click', (e) => {
+    rulesCurtain.classList.remove('open')
+    gsap.to('.rules-content', {
+        opacity: 0,
+        // delay: 0.5
+    })
+
 })
