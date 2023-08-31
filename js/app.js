@@ -13,7 +13,7 @@ let counter = 0
 let randomIndex
 let bounds
 
-// get quotes from JSON
+// get all quotes from JSON
 fetch('https://robinverona.github.io/rap-ou-poesie/data/quotes.json')
     .then(res => {
         return res.json()
@@ -165,7 +165,7 @@ function nextCard() {
 function checkAnswer(answer) {
     if (quotes[i].answer === answer) {
         gsap.to(".card-back", {
-            backgroundColor: '#00d13c',
+            backgroundColor: '#16B84E',
         })
 
     } else {
