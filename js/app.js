@@ -18,6 +18,16 @@ let randomIndex
 let bounds
 
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker
+        .register('/serviceWorker.js')
+        .then(res => console.log('service worker registered'))
+        .catch(err => console.log('service worker not registered', err))
+    })
+  }
+
+
 // get all quotes from JSON
 fetch('https://robinverona.github.io/rap-ou-poesie/data/quotes.json')
     .then(res => {
@@ -31,10 +41,11 @@ fetch('https://robinverona.github.io/rap-ou-poesie/data/quotes.json')
         console.error(err)
 });
 
-
 function init() {
-    quotes = [...loadedQuotes]
-    shuffle(quotes)
+    availableQuotes = [...loadedQuotes]
+    shuffle(availableQuotes)
+    quotes = pick10(availableQuotes)
+    console.log('quotes dans init', quotes)
     gsap.fromTo('.masthead', {
         y: -72, 
         opacity: 0,
@@ -63,6 +74,15 @@ function init() {
     }, 1000);
 }
 
+function pick10(arr) {
+    let newQuotes = []
+    for (let index = 0; index < 10; index++) {
+        newQuotes.push(arr[index])
+        delete arr[index]     
+    }
+    console.log(newQuotes)
+    return newQuotes
+}
 
 function createCard(question) {
     const colors = ['green', 'orange', 'purple', 'yellow', 'grey', 'blue', 'pink', 'skyblue', 'brown']
@@ -169,12 +189,12 @@ function nextCard() {
 
 function checkAnswer(answer) {
     if (quotes[i].answer === answer) {
-        gsap.to(".card-back", {
+        gsap.to('.card-back', {
             backgroundColor: '#16B84E',
         })
 
     } else {
-        gsap.to(".card-back", {
+        gsap.to('.card-back', {
             backgroundColor: '#FE1B00'
         })
     }
@@ -203,7 +223,6 @@ function createCounter() {
         opacity: 0
     })
 }
-
 
 function updateCounter() {
     counter++
@@ -266,14 +285,13 @@ function rotateToMouse(e) {
       )
     `;
   }
-  
 
 rapButton.addEventListener('click', () => {
     flipCard()
     rapButton.disabled = true;
     checkAnswer('rap')
     setTimeout(() => {
-        gsap.to(".card", {
+        gsap.to('.card', {
             transform: 'scale(1.3) rotate(-40deg) translateY(-80px)',
             opacity: 0,
             ease: Power1. easeOut,
@@ -281,16 +299,12 @@ rapButton.addEventListener('click', () => {
     }, 1000);
 })
 
-
-
-
-
 poetryButton.addEventListener('click', () => {
     flipCard()
     poetryButton.disabled = true;
     checkAnswer('poetry')
     setTimeout(() => {
-        gsap.to(".card", {
+        gsap.to('.card', {
             transform: 'scale(1.3) rotate(40deg) translateY(-80px)',
             opacity: 0,
             ease: Power1. easeOut,
@@ -321,9 +335,16 @@ if (!isMobile()) {
         let circle = document.querySelector('#rapButton img')
         circle.style.animationDuration = '20s'
     })    
+    startButton.addEventListener('mouseenter', () => {
+        let circle = document.querySelector('#startButton img')
+        circle.style.animationDuration = '5s'
+    })
+    
+    startButton.addEventListener('mouseleave', () => {
+        let circle = document.querySelector('#startButton img')
+        circle.style.animationDuration = '20s'
+    })
 }
-
-
 
 rulesButton.addEventListener('click', () => {
     rulesButton.classList.add('closeButton')
@@ -344,7 +365,6 @@ rulesButton.addEventListener('click', () => {
             delay: 0.5
         })
     } 
-
 
     rulesCurtain.addEventListener('click', () => {
         rulesCurtain.classList.remove('open')
@@ -370,5 +390,7 @@ startButton.addEventListener('click', (e) => {
         opacity: 0,
         // delay: 0.5
     })
+
+    startButton.style.display = 'none'
 
 })
