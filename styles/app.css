@@ -167,6 +167,14 @@ html, body {
   flex-direction: column;
   transition: height 0.5s ease-in;
 }
+.rules-curtain .logo {
+  display: none;
+}
+@media (min-width: 768px) {
+  .rules-curtain .logo {
+    display: block;
+  }
+}
 .rules-curtain.open {
   height: 100%;
 }
@@ -188,10 +196,16 @@ html, body {
   align-items: center;
   letter-spacing: -1px;
 }
+@media (min-width: 768px) {
+  .rules-content h1 {
+    margin: 2rem 1rem;
+    font-size: 4.375rem;
+  }
+}
 .rules-content h1 {
-  font-size: 4.375rem;
+  font-size: 3rem;
   text-align: center;
-  margin: 3rem 1rem;
+  margin: 2rem 1rem;
   text-transform: uppercase;
 }
 .rules-content p {
@@ -219,7 +233,7 @@ html, body {
   opacity: 0;
 }
 
-.menu a {
+.menu {
   color: white;
   font-weight: bold;
   font-family: var(--text-headings);
@@ -227,6 +241,15 @@ html, body {
   line-height: 20px;
   text-decoration: none;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
 }
 
 .masthead {
@@ -286,6 +309,11 @@ html, body {
   margin: 3rem 1rem;
   text-transform: uppercase;
 }
+@media (min-width: 768px) {
+  .home h1 {
+    font-size: 2rem;
+  }
+}
 .home p {
   font-family: var(--text-body);
   width: 90%;
@@ -321,7 +349,7 @@ html, body {
   font-weight: bold;
   font-family: var(--text-headings);
   text-transform: uppercase;
-  font-size: 17px;
+  font-size: 12px;
   line-height: 20px;
   border-radius: 50%;
   letter-spacing: -1px;
@@ -346,6 +374,19 @@ html, body {
     transform: scale(1.2);
     animation-duration: 10s;
   }
+}
+
+#startButton {
+  margin: 50px 0;
+}
+
+.menu.controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu.controls button {
+  color: white;
 }
 
 @-webkit-keyframes spin {

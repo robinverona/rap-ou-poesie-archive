@@ -21,6 +21,9 @@
         text-align: center;
         margin: 3rem 1rem;
         text-transform: uppercase;
+        @include for-tablet-landscape-up {
+            font-size: 2rem;
+          }
     }
 
     & p {

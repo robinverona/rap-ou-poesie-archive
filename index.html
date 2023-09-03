@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rap ou Poésie</title>
     <link rel="stylesheet" href="styles/app.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <link rel="manifest" href="manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/assets/images/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icons/icon-128x128.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#fff" />
+    <meta name="theme-color" content="#fff" />
 </head>
 <body>
     <div class="rules-curtain open">
         <div class="rules-content">
+            <img class="logo" src="./assets/favicon.png" alt="">
             <h1>Rap ou Poésie</h1>
             <p>Rap ou Poésie est un quizz où vous devez deviner si une citation est issue d’un extrait de rap français ou de poésie française. L'objectif est d’illustrer la porosité entre le rap français et la poésie classique française. </p>
             <p>Cliquez sur le bouton correspondant à l'origine supposée de la citation.</p>
@@ -46,7 +55,17 @@
     </main>
     <div class="curtain">
         <nav class="menu">
-            <a href="">rejouer ?</a>
+            <span id="menuText">continuer ?</span>
+            <div class="menu controls">
+                <button id="continueButton">
+                    continuer
+                    <img src="/assets/images/continue-circle.svg" alt="">
+                </button>
+                <button id="resultsButton">
+                    résultats
+                    <img src="/assets/images/results-circle.svg" alt="">
+                </button>
+            </div>
         </nav>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
