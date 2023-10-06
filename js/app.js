@@ -174,7 +174,8 @@ function nextCard() {
     if (i === quotes.length) {
         console.log('fin')
         gsap.to('.curtain', {
-            height: '100%'
+            height: '100%',
+            display: 'flex',
         })
         gsap.to('.menu', {
             delay: 0.5,
@@ -316,25 +317,7 @@ function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
     
-if (!isMobile()) {
-    poetryButton.addEventListener('mouseenter', () => {
-        let circle = document.querySelector('#poetryButton img')
-        circle.style.animationDuration = '5s'
-    })
-    
-    poetryButton.addEventListener('mouseleave', () => {
-        let circle = document.querySelector('#poetryButton img')
-        circle.style.animationDuration = '20s'
-    })
-    rapButton.addEventListener('mouseenter', () => {
-        let circle = document.querySelector('#rapButton img')
-        circle.style.animationDuration = '5s'
-    })
-    
-    rapButton.addEventListener('mouseleave', () => {
-        let circle = document.querySelector('#rapButton img')
-        circle.style.animationDuration = '20s'
-    })    
+if (!isMobile()) {    
     startButton.addEventListener('mouseenter', () => {
         let circle = document.querySelector('#startButton img')
         circle.style.animationDuration = '5s'
