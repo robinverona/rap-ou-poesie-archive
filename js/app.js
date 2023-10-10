@@ -1,21 +1,21 @@
 'use strict'; 
-const cardDeck = document.querySelector('.card-deck')
-const rapButton = document.getElementById('rapButton')
-const poetryButton = document.getElementById('poetryButton')
-const rulesButton = document.getElementById('rulesButton')
-const rulesCurtain = document.querySelector('.rules-curtain')
-let cardFrontTarget = document.querySelector('.card-front')
-const startButton = document.getElementById('startButton')
-
-let counterHtml
-let loadedQuotes = []
-let quotes = []
-let availableQuotes = []
-let i = 0
-let card // reference to current card
-let counter = 0
-let randomIndex
-let bounds
+const cardDeck = document.querySelector('.card-deck');
+const rapButton = document.getElementById('rapButton');
+const poetryButton = document.getElementById('poetryButton');
+const rulesButton = document.getElementById('rulesButton');
+const rulesCurtain = document.querySelector('.rules-curtain');
+let cardFrontTarget = document.querySelector('.card-front');
+const startButton = document.getElementById('startButton');
+// const continueButton = document.getElementById('continueButton');
+let counterHtml;
+let loadedQuotes = [];
+let quotes = [];
+let availableQuotes = [];
+let i = 0;
+let card; // reference to current card
+let counter = 0;
+let randomIndex;
+let bounds;
 
 
 if ('serviceWorker' in navigator) {
@@ -25,7 +25,7 @@ if ('serviceWorker' in navigator) {
         .then(res => console.log('service worker registered'))
         .catch(err => console.log('service worker not registered', err))
     })
-  }
+}
 
 
 // get all quotes from JSON
@@ -44,7 +44,7 @@ fetch('https://robinverona.github.io/rap-ou-poesie/data/quotes.json')
 function init() {
     availableQuotes = [...loadedQuotes]
     shuffle(availableQuotes)
-    quotes = pick10(availableQuotes)
+    quotes = pick(availableQuotes)
     console.log('quotes dans init', quotes)
     gsap.fromTo('.masthead', {
         y: -72, 
@@ -54,7 +54,7 @@ function init() {
         y: 0, 
         opacity: 1,
         ease: Power1. easeOut,
-    })
+    });
 
     
     setTimeout(() => {
@@ -74,62 +74,62 @@ function init() {
     }, 1000);
 }
 
-function pick10(arr) {
-    let newQuotes = []
-    for (let index = 0; index < 10; index++) {
-        newQuotes.push(arr[index])
-        delete arr[index]     
+function pick(arr) {
+    let newQuotes = [];
+    for (let index = 0; index < 30; index++) {
+        newQuotes.push(arr[index]);
+        delete arr[index]; 
     }
-    console.log(newQuotes)
-    return newQuotes
+    console.log(newQuotes);
+    return newQuotes;
 }
 
 function createCard(question) {
-    const colors = ['green', 'orange', 'purple', 'yellow', 'grey', 'blue', 'pink', 'skyblue', 'brown']
-    let randomNumber = Math.floor(Math.random() * colors.length)
+    const colors = ['green', 'orange', 'purple', 'yellow', 'grey', 'blue', 'pink', 'skyblue', 'brown'];
+    let randomNumber = Math.floor(Math.random() * colors.length);
 
     // Create card block
-    card = document.createElement('div')
-    card.classList.add('card')
+    card = document.createElement('div');
+    card.classList.add('card');
 
     // Create inner card wrapper
-    let cardInner = document.createElement('div')
-    cardInner.classList.add('card-inner')
+    let cardInner = document.createElement('div');
+    cardInner.classList.add('card-inner');
 
-    card.appendChild(cardInner)
+    card.appendChild(cardInner);
     
     // Create card front
-    let cardFront = document.createElement('div')
-    cardFront.classList.add('card-front')
-    cardFront.classList.add(colors[randomNumber])
+    let cardFront = document.createElement('div');
+    cardFront.classList.add('card-front');
+    cardFront.classList.add(colors[randomNumber]);
     
-    cardInner.appendChild(cardFront)
-    cardFrontTarget = cardFront
+    cardInner.appendChild(cardFront);
+    cardFrontTarget = cardFront;
 
-    let cardFrontPara = document.createElement('p')
-    cardFrontPara.innerHTML = question.quote
-    cardFrontPara.classList.add('card-text')
-    cardFront.appendChild(cardFrontPara)
+    let cardFrontPara = document.createElement('p');
+    cardFrontPara.innerHTML = question.quote;
+    cardFrontPara.classList.add('card-text');
+    cardFront.appendChild(cardFrontPara);
 
     // Create card back
-    let cardBack = document.createElement('div')
-    cardBack.classList.add('card-back')
-    cardInner.appendChild(cardBack)
+    let cardBack = document.createElement('div');
+    cardBack.classList.add('card-back');
+    cardInner.appendChild(cardBack);
 
-    let cardBackAuthor = document.createElement('span')
-    cardBackAuthor.innerHTML = question.author
-    cardBackAuthor.classList.add('card-author')
-    cardBack.appendChild(cardBackAuthor)
+    let cardBackAuthor = document.createElement('span');
+    cardBackAuthor.innerHTML = question.author;
+    cardBackAuthor.classList.add('card-author');
+    cardBack.appendChild(cardBackAuthor);
 
-    let cardBackOrigin = document.createElement('span')
-    cardBackOrigin.innerHTML = question.origin
-    cardBackOrigin.classList.add('card-origin')
-    cardBack.appendChild(cardBackOrigin)
+    let cardBackOrigin = document.createElement('span');
+    cardBackOrigin.innerHTML = question.origin;
+    cardBackOrigin.classList.add('card-origin');
+    cardBack.appendChild(cardBackOrigin);
 
     // create glow div for effect
-    let glowHtml = document.createElement('div')
-    glowHtml.classList.add('glow')
-    cardFront.appendChild(glowHtml)
+    let glowHtml = document.createElement('div');
+    glowHtml.classList.add('glow');
+    cardFront.appendChild(glowHtml);
 
     // cardDeck.appendChild(card)
     cardDeck.insertBefore(card, cardDeck.children[1]); 
@@ -162,7 +162,7 @@ function createCard(question) {
 }
 
 function flipCard() {
-    card.classList.add('translated')
+    card.classList.add('translated');
 }
 
 function removeCard(card) {
@@ -193,11 +193,26 @@ function checkAnswer(answer) {
         gsap.to('.card-back', {
             backgroundColor: '#16B84E',
         })
-
+        setTimeout(() => {
+            gsap.to('.card', 
+            {
+                transform: 'scale(1.3) rotate(40deg) translateY(-80px)',
+                opacity: 0,
+                ease: Power1. easeOut,
+            })
+        }, 1000);
+        
     } else {
         gsap.to('.card-back', {
             backgroundColor: '#FE1B00'
         })
+        setTimeout(() => {
+            gsap.to('.card', {
+                transform: 'scale(1.3) rotate(-40deg) translateY(-80px)',
+                opacity: 0,
+                ease: Power1. easeOut,
+            })
+        }, 1000);
     }
 
     setTimeout(() => {
@@ -291,26 +306,14 @@ rapButton.addEventListener('click', () => {
     flipCard()
     rapButton.disabled = true;
     checkAnswer('rap')
-    setTimeout(() => {
-        gsap.to('.card', {
-            transform: 'scale(1.3) rotate(-40deg) translateY(-80px)',
-            opacity: 0,
-            ease: Power1. easeOut,
-        })
-    }, 1000);
+    
 })
 
 poetryButton.addEventListener('click', () => {
     flipCard()
     poetryButton.disabled = true;
     checkAnswer('poetry')
-    setTimeout(() => {
-        gsap.to('.card', {
-            transform: 'scale(1.3) rotate(40deg) translateY(-80px)',
-            opacity: 0,
-            ease: Power1. easeOut,
-        })
-    }, 1000);
+    
 })
 
 function isMobile() {
@@ -368,12 +371,15 @@ rulesButton.addEventListener('click', () => {
 })
 
 startButton.addEventListener('click', (e) => {
-    rulesCurtain.classList.remove('open')
+    rulesCurtain.classList.remove('open');
     gsap.to('.rules-content', {
         opacity: 0,
         // delay: 0.5
     })
 
-    startButton.style.display = 'none'
-
+    startButton.style.display = 'none';
 })
+
+// continueButton.addEventListener('click', () => {
+//     init()
+// })
