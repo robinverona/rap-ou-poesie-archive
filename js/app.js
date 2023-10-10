@@ -170,6 +170,10 @@ function removeCard(card) {
 }
 
 function nextCard() {
+    gsap.to('#content', {
+        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%)',
+        duration: 1
+    })
     i++;
     if (i === quotes.length) {
         console.log('fin')
@@ -193,6 +197,10 @@ function checkAnswer(answer) {
         gsap.to('.card-back', {
             backgroundColor: '#16B84E',
         })
+        gsap.to('#content', {
+            background: 'rgba(22, 184, 78, 0.3)',
+            // duration: 1
+        })
         setTimeout(() => {
             gsap.to('.card', 
             {
@@ -205,6 +213,10 @@ function checkAnswer(answer) {
     } else {
         gsap.to('.card-back', {
             backgroundColor: '#FE1B00'
+        })
+        gsap.to('#content', {
+            background: 'rgba(254, 27, 0, 0.3)',
+            // duration: 1
         })
         setTimeout(() => {
             gsap.to('.card', {
