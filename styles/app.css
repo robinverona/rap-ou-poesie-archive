@@ -107,7 +107,6 @@ html, body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 .wallpaper {
@@ -332,6 +331,54 @@ html, body {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+}
+
+.collection {
+  padding: 0;
+  margin: 0;
+  height: 600vh;
+  width: 100vw;
+}
+.collection .card {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 400px;
+}
+
+.slider {
+  height: 40vh;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  display: none;
+}
+
+.wheel {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300vw;
+  height: 300vw;
+  max-width: 2000px;
+  max-height: 2000px;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  outline: red solid 1px;
+}
+
+.wheel-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6%;
+  max-width: 200px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
 }
 
 .controls {

@@ -6,6 +6,7 @@ const rulesButton = document.getElementById('rulesButton');
 const rulesCurtain = document.querySelector('.rules-curtain');
 let cardFrontTarget = document.querySelector('.card-front');
 const startButton = document.getElementById('startButton');
+const resultsButton = document.getElementById('resultsButton'); 
 // const continueButton = document.getElementById('continueButton');
 let counterHtml;
 let loadedQuotes = [];
@@ -76,7 +77,7 @@ function init() {
 
 function pick(arr) {
     let newQuotes = [];
-    for (let index = 0; index < 30; index++) {
+    for (let index = 0; index < 8; index++) {
         newQuotes.push(arr[index]);
         delete arr[index]; 
     }
@@ -315,6 +316,9 @@ function rotateToMouse(e) {
   }
 
 rapButton.addEventListener('click', () => {
+    gsap.to('.card', {
+        transform: 'rotate(0)'
+    })
     flipCard()
     rapButton.disabled = true;
     checkAnswer('rap')
@@ -322,11 +326,38 @@ rapButton.addEventListener('click', () => {
 })
 
 poetryButton.addEventListener('click', () => {
+    gsap.to('.card', {
+        transform: 'rotate(0)'
+    })
     flipCard()
     poetryButton.disabled = true;
     checkAnswer('poetry')
     
 })
+
+// rapButton.addEventListener('mouseenter', () => {
+//     gsap.to('.card', {
+//         transform: 'rotate(-10deg)'
+//     })
+// })
+
+// rapButton.addEventListener('mouseleave', () => {
+//     gsap.to('.card', {
+//         transform: 'rotate(0)'
+//     })
+// })
+
+// poetryButton.addEventListener('mouseenter', () => {
+//     gsap.to('.card', {
+//         transform: 'rotate(10deg)'
+//     })
+// })
+
+// poetryButton.addEventListener('mouseleave', () => {
+//     gsap.to('.card', {
+//         transform: 'rotate(0)'
+//     })
+// })
 
 function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -392,6 +423,133 @@ startButton.addEventListener('click', (e) => {
     startButton.style.display = 'none';
 })
 
-// continueButton.addEventListener('click', () => {
-//     init()
-// })
+gsap.registerPlugin("ScrollTrigger", "Draggable");
+
+resultsButton.addEventListener('click', () => {
+    gsap.to('.card-deck', {
+        opacity: 0, 
+        display: 'none'
+    });
+    gsap.to('.controls', {
+        opacity: 0, 
+        display: 'none'
+    });
+    gsap.to('.curtain', {
+        height: 0
+    });
+
+    const slider = document.querySelector('.slider');
+    slider.style.display = 'block';
+    const collection = document.querySelector('.wheel'); 
+    console.log(quotes);
+
+
+    quotes.forEach(quote => {
+
+
+        const colors = ['green', 'orange', 'purple', 'yellow', 'grey', 'blue', 'pink', 'skyblue', 'brown'];
+        let randomNumber = Math.floor(Math.random() * colors.length);
+
+
+        let resultCard = document.createElement('li');
+        resultCard.classList.add('card');
+        resultCard.classList.add('wheel-card');
+
+        resultCard.classList.add(colors[randomNumber]);
+
+
+        let resultCardQuote = document.createElement('p');
+        resultCardQuote.innerHTML = quote.quote;
+        resultCardQuote.classList.add('card-text');
+        resultCard.appendChild(resultCardQuote);
+
+        let resultCardInfosWrapper = document.createElement('div'); 
+        resultCardInfosWrapper.classList.add('card-infos');
+
+        let resultCardAuthor = document.createElement('p');
+        resultCardAuthor.innerHTML = quote.author;
+        resultCardAuthor.classList.add('card-author');
+        resultCardInfosWrapper.appendChild(resultCardAuthor);
+
+        let resultCardOrigin = document.createElement('p');
+        resultCardOrigin.innerHTML = quote.origin;
+        resultCardOrigin.classList.add('card-origin');
+        resultCardInfosWrapper.appendChild(resultCardOrigin);
+
+        resultCard.appendChild(resultCardInfosWrapper);
+        collection.appendChild(resultCard);
+
+        // gsap.fromTo('.card', {
+        //     y: 2000
+        // }, {
+        //     y: 0,
+        //     stagger: 0.5,
+        //     duration: 1
+        // })
+    });
+    // console.clear();
+
+    gsap.registerPlugin("ScrollTrigger");
+    gsap.registerPlugin("Draggable");
+
+    let body = document.querySelector('body');
+    body.classList.add('collection')
+
+    let wheel = document.querySelector(".wheel");
+    let cards = gsap.utils.toArray(".wheel-card");
+
+    // gsap.to(".arrow", { y: 5, ease: "power1.inOut", repeat: -1, yoyo: true });
+
+    function setup() {
+        let radius = wheel.offsetWidth / 2;
+        let center = wheel.offsetWidth / 2;
+        let total = cards.length;
+        let slice = (2 * Math.PI) / total;
+
+        cards.forEach((item, i) => {
+            let angle = i * slice;
+
+            let x = center + radius * Math.sin(angle);
+            let y = center - radius * Math.cos(angle);
+
+            gsap.set(item, {
+                rotation: angle + "_rad",
+                xPercent: -50,
+                yPercent: -50,
+                x: x,
+                y: y
+            });
+        });
+    }
+
+    setup();
+
+    window.addEventListener("resize", setup);
+
+    gsap.to(".wheel", {
+        rotate: () => -360,
+        ease: "none",
+        duration: cards.length,
+        scrollTrigger: {
+            start: 0,
+            end: "max",
+            scrub: 1,
+            snap: 1 / cards.length,
+            invalidateOnRefresh: true
+        }
+    });
+
+    // let cards = gsap.utils.toArray(".wheel-card");
+
+    // let isFullScreen = false;
+
+    Draggable.create(".wheel", {
+        type: "rotation",
+        inertia: true,
+        snap: {
+            rotation: gsap.utils.snap(360 / cards.length)
+        }
+    });
+})
+
+
